@@ -1,0 +1,65 @@
+# ---------------------------------------------------------------
+# Tarea 1 - INF221 Algoritmos y Complejidad
+# ---------------------------------------------------------------
+
+# --- Datos generados (pesados: los arreglos de n=10^7 rondan los
+# --- 80 MB cada uno). Se regeneran con los scripts de scripts/.
+code/sorting/data/array_input/*
+code/sorting/data/array_output/*
+code/matrix_multiplication/data/matrix_input/*
+code/matrix_multiplication/data/matrix_output/*
+
+# Los resultados SI se versionan (son livianos y son la evidencia
+# del experimento): data/measurements/ y data/plots/
+
+# Conservar la estructura de directorios vacios
+!.gitkeep
+
+# --- Binarios y objetos de C++
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+bin/
+build/
+
+# --- Auxiliares de LaTeX
+*.aux
+*.log
+*.toc
+*.lot
+*.lof
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# --- Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Sistema operativo / editores
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# --- Entrega
+*.zip
+
+# --- Artefactos de la prueba de humo (regenerables con `make smoke`)
+code/*/data/measurements/smoke_*.csv
+code/*/data/plots/smoke_*.png

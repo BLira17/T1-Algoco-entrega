@@ -1,0 +1,15 @@
+% Tarea 1 - INF-221 Algoritmos y Complejidad - 2026-2
+% Benjamin Lira - Rol: 202473586-1
+
+Este informe presenta un estudio experimental de dos problemas clásicos: ordenar
+un arreglo unidimensional de números enteros y multiplicar dos matrices
+cuadradas de números enteros. Para el primero se midieron cuatro algoritmos
+---\textsc{merge sort}, \textsc{quick sort}, \textsc{patience sort} y el
+\textsc{sort} de la biblioteca estándar de C++---, y para el segundo dos: el
+algoritmo clásico de tres ciclos anidados (\textsc{naive}) y el de
+\textsc{Strassen}. Sus complejidades teóricas son conocidas \cite{cormen2009};
+el objetivo no es deducirlas, sino contrastarlas con el comportamiento medido:
+determinar si el exponente de crecimiento observado coincide con el predicho, y
+qué factores ---la estructura de la entrada, la jerarquía de memoria y las
+decisiones de implementación--- explican las diferencias que la notación
+asintótica no captura.

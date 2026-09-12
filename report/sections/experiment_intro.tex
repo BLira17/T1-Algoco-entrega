@@ -1,0 +1,40 @@
+% Tarea 1 - INF-221 Algoritmos y Complejidad - 2026-2
+% Benjamin Lira - Rol: 202473586-1
+
+Todas las mediciones se realizaron en el mismo equipo y con la misma
+configuración:
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Procesador        & Intel Core Ultra 7 155H (16 núcleos físicos, 22 lógicos) \\
+Memoria           & 31,5 GB \\
+Sistema operativo & Windows 11 Pro 10.0.26200 \\
+Compilador        & \texttt{g++} (MSYS2 UCRT64) 15.2.0 \\
+Opciones          & \texttt{-std=c++17 -O2 -Wall -Wextra -pedantic}, enlazado estático \\
+Gráficos          & Python 3.14.3 con \texttt{numpy} 2.5.3, \texttt{matplotlib} 3.11.1 \\
+\hline
+\end{tabular}
+\end{center}
+
+Del cronómetro (\texttt{std::chrono::steady\_clock}) sólo se mide la llamada al
+algoritmo: la lectura de los archivos, la copia del arreglo de trabajo y la
+verificación de correctitud quedan fuera. La memoria reportada es el pico de
+bytes vivos solicitados al \emph{heap}, medido interceptando \texttt{operator
+new} y \texttt{operator delete}; no incluye la pila. Cada par (algoritmo, caso)
+se ejecuta en un proceso propio, con una corrida de calentamiento no
+cronometrada seguida de tres repeticiones. En los tamaños pequeños una sola
+ejecución dura menos que unas pocas cuentas del reloj, por lo que el algoritmo
+se ejecuta $K$ veces dentro de una única región cronometrada y se divide por
+$K$, con las $K$ copias de trabajo preparadas de antemano.
+
+Los conjuntos de prueba son los descritos en el enunciado. Para ordenamiento,
+arreglos de $n \in \{10^1, 10^3, 10^5, 10^7\}$ elementos ---se añadió $10^6$
+como punto intermedio para ajustar mejor la pendiente---, de tipo
+\emph{ascendente}, \emph{descendente} o \emph{aleatorio}, con valores en
+$D1 = \{0,\dots,9\}$ o $D7 = \{0,\dots,10^7\}$, y tres muestras por combinación.
+Para multiplicación, pares de matrices de $n \in \{2^4, 2^6, 2^8, 2^{10}\}$, de
+tipo \emph{dispersa}, \emph{diagonal} o \emph{densa}, con coeficientes en
+$D0 = \{0,1\}$ o $D10 = \{0,\dots,9\}$, y tres muestras. Son 360 corridas de
+ordenamiento y 144 de multiplicación. Todas se verificaron contra un oráculo
+independiente del algoritmo medido, y todas resultaron correctas.

@@ -1,0 +1,19 @@
+% Tarea 1 - INF-221 Algoritmos y Complejidad - 2026-2
+% Benjamin Lira - Rol: 202473586-1
+
+La complejidad teórica describió correctamente el orden de crecimiento en los
+dos problemas: los veinticuatro exponentes empíricos de ordenamiento quedaron
+entre 0,98 y 1,17 frente al 1,07 que predice $n \log n$, y los de multiplicación
+entre 2,68 y 3,73 en torno a los valores teóricos 2,81 y 3. Pero dentro de esa
+misma clase el tiempo varió hasta 91 veces según la entrada, y hasta 90 veces
+entre dos algoritmos sobre una misma entrada, de modo que la clase de
+complejidad no basta para elegir un algoritmo. Tres factores resultaron
+decisivos y ninguno aparece en la notación asintótica: la estructura de la
+entrada, que llevó a patience sort de 60,1 ms a 1693,3 ms para el mismo $n$; la
+jerarquía de memoria, que elevó el exponente del algoritmo clásico de
+multiplicación de 2,91 a 3,73 justo cuando el conjunto de trabajo dejó de caber
+en caché, y con ello adelantó el cruce con Strassen a un tamaño unas ocho veces
+menor que el previsto por el exponente asintótico; y el consumo de memoria, que separa a los cuatro algoritmos de
+ordenamiento donde el tiempo no lo hace, entre los que no reservan nada
+(\texttt{std::sort} y quick sort), el que reserva 38 MB constantes (merge sort)
+y el que reserva entre 42 MB y 457 MB según la entrada (patience sort).
